@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.messages {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+}
+.message-wrapper textarea {
+  height: 40px;
+  background-color: yellow;
+  border-radius: 8px;
+}
+
+.new-message {
+  padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 8px;
+  float: left;
+  clear: both;
+  margin: 5px;
+}
+
+.my-message {
+  background-color: #3574c2;
+  float: right;
+}
+
+#send {
+  background-color: red;
+  color: yellow;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

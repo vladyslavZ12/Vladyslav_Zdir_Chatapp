@@ -1,0 +1,53 @@
+PART 1
+**************************
+
+1.
+initialize a new instance of socket.io
+
+const messenger = require('socket.io')();
+
+2.
+listen on the connection event for incoming sockets
+and log it in to the console
+
+when you make a connection to the meneger service
+it creates socket whener anybody connects
+
+messenger.on('connection', (socket) => {
+	console.log(`a user connected: ${socket.id}`);
+
+});
+
+
+3. in main.js:
+
+load the socket.io-client, which exposes
+an io global (and the endpoint GET /socket.io/socket.io.js), and then connect.
+
+when I call io(), фтв it defaults to trying to connect to the host that serves the page.
+
+const socket = io();
+
+
+4.
+Each socket also fires a special disconnect event:
+
+socket.on('disconnect', () => {
+		console.log('a user has disconnected');
+	})
+
+
+
+5. 
+
+when the user types in a message, the server gets it as a chat message event 
+
+socket.emit('chatmessage', { content: this.message, name: this.nickname || "Anonymys" });
+
+	socket.on('chatmessage', function (msg) {
+		console.log(msg);
+		messenger.emit('message', { id: socket.id, message: msg })
+	});
+    
+
+****************************
